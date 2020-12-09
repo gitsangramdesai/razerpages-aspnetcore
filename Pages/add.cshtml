@@ -1,0 +1,45 @@
+@page
+@using RazorPagesMovie.Models @*namespace*@
+@model AddModel
+
+
+<div class="container">
+    <h3>Add MovieVM</h3>
+    <hr />
+    <br />
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="MovieVM.Title"></label>
+                <input asp-for="MovieVM.Title" class="form-control" />
+                <span class="alert-danger" asp-validation-for="MovieVM.Title"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="MovieVM.ReleaseDate"></label>
+                <input asp-for="MovieVM.ReleaseDate" class="form-control" />
+                <span class="alert-danger" asp-validation-for="MovieVM.ReleaseDate"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="MovieVM.Genre"></label>
+                <input asp-for="MovieVM.Genre" class="form-control" />
+                <span class="alert-danger" asp-validation-for="MovieVM.Genre"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="MovieVM.Price"></label>
+                <input asp-for="MovieVM.Price" cl class="form-control" />
+                <span class="alert-danger" asp-validation-for="MovieVM.Price"></span>
+            </div>
+        </div>
+
+        <br />
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a class="btn btn-default" href="/index">Cancel</a>
+    </form>
+</div>

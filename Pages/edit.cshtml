@@ -1,0 +1,49 @@
+@page "{id:int}"
+@model aspnetcoreapp.Pages.EditModel
+@{
+    ViewData["Title"] = "EDIT";
+}
+
+<h1>EDIT</h1>
+
+<h4>Movie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <input asp-for="MovieVM.ID" type="hidden" />
+            <div class="row">
+                <div class="col-md-4">
+                    <label asp-for="MovieVM.Title"></label>
+                    <input asp-for="MovieVM.Title" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label asp-for="MovieVM.ReleaseDate"></label>
+                    <input asp-for="MovieVM.ReleaseDate"  />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label asp-for="MovieVM.Genre"></label>
+                    <input asp-for="MovieVM.Genre"  />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label asp-for="MovieVM.Price"></label>
+                    <input asp-for="MovieVM.Price" />
+                </div>
+            </div>
+
+            <br />
+            <input type="submit" value="Save" class="btn btn-primary" />
+            <a class="btn btn-default" href="/index">Cancel</a>
+        </form>
+    </div>
+</div>
+<div>
+    <a class="btn btn-default" href="/index">Back to List</a>
+</div> 

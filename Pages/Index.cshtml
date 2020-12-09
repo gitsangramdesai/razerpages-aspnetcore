@@ -1,0 +1,36 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>
+    <h1 class="display-4">Movies</h1>
+    <a  asp-page="./add">Add Movies</a> 
+
+    <table class="table table-bordered">  
+    <tr>  
+        <th>Id </th>  
+        <th>Title</th>  
+        <th>ReleaseDate </th>  
+        <th>Genre</th>  
+        <th>Price</th>  
+        <th>Edit | Detail | Delete</th>
+    </tr>  
+    @foreach (var d in IndexModel.myMovies)  
+    {  
+        <tr>  
+            <td>@d.ID</td>  
+            <td>@d.Title</td>  
+            <td>@d.ReleaseDate.ToString("yyyy-MM-dd")</td>  
+            <td>@d.Genre</td>  
+            <td>@d.Price</td>
+            <td>
+                    <a  asp-page="./edit" asp-route-id="@d.ID">Edit</a> |
+                    <a asp-page="./detail"  asp-page-handler="Delete" asp-route-id="@d.ID">Detail</a>|
+                    <a asp-page="./index" onclick="return confirm('Are you sure you want to delete this item?');" asp-page-handler="Delete" asp-route-id="@d.ID">Delete</a>
+                </td>
+        </tr>  
+    }  
+    </table>  
+</div>
